@@ -1,0 +1,38 @@
+name: Deploy Static Site to GCP
+
+on:
+  push:
+    branches:
+      - main 
+  pull_request:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: true  
+          fetch-depth: 0  
+
+      - name: Setup Environment
+        run: echo "Setup any required environments or dependencies"
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: 'projects/774699624900/locations/global/workloadIdentityPools/github/providers/my-repo'
+          service_account: 'cloud-project@keen-enigma-420609.iam.gserviceaccount.com'
+
+      - name: Upload to Google Cloud Storage
+        uses: google-github-actions/upload-cloud-storage@v1
+        with:
+          path: './index.html'
+          destination: 'cs-1660-web/'
+          parent: false 
+          process_gcloudignore: false
