@@ -1,0 +1,73 @@
+#page_title {
+    text-align: center;
+    color:blue;
+    margin: 50px;
+}
+
+.list {
+    color: cyan;
+}
+
+h2, h3, h4 {
+    color: red;
+}
+
+#things_to_buy {
+    list-style-image: url("/images/pets.png");
+}
+
+.title_navigation_bar {
+    clear:both;
+    float:left;
+    margin:0px;
+}
+
+.ul_navigation_bar {
+    list-style-type: none;
+    float:right;
+    margin:0px;
+}
+
+ul.ul_navigation_bar li {
+    margin: 0px 5px;
+    float: left;
+}
+
+.ul_navigation_bar img {
+    width:48px;
+    height: 48px;
+}
+
+#youtube_link {
+    clear:both;
+    display:block;
+}
+
+table, th, td {
+    border:1px solid black;
+    padding: 10px;
+}
+
+.pitt_links {
+    border: 1px solid black; 
+    float:left; 
+    background-color:aqua; 
+    width:280px; 
+    padding: 5px; 
+    margin: 5px;
+}
+
+.pitt_links img {
+    width:64px;
+    height:64px;
+    float:left;
+}
+
+.pitt_links_inner_div {
+    float:left; 
+    margin: 5px 0px 0px 10px;
+}
+
+.pitt_links_inner_div h4, .pitt_links_inner_div p {
+    margin: 0px 5px;
+}
